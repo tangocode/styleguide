@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>TangoCode Swift Style Guide</title>
+<link rel="stylesheet" type="text/css" href="styleguide.css"/>
+<script language="javascript" src="include/styleguide.js"></script>
+<!--<link href="https://www.google.com/favicon.ico" type="image/x-icon" rel="shortcut icon" />-->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script></head>
+<body onload="initStyleGuide();">
+<div id="content">
+<h1>TangoCode JavaScript Style Guide</h1>
+<div class="vertical_toc" id="tocDiv"></div>
+
+<div class="main_body">
+
+<h2 id="s1-introduction">1 Introduction</h2>
+
+<p>This document serves as the <strong>complete</strong> definition of TangoCodes's coding standards for
+source code in the Swift&#8482; Programming Language. 
+
+<div style="text-align:center">
+<h3 align="left" style="text-align:left">
+<table cellspacing="0" style="line-height:1.6;font-size:10pt;font-weight:normal">
+<tbody>
+<tr>
+<td style="width:900px;height:5234px">
+<div dir="ltr">
+<div style="text-align:center">
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;font-size:14px;line-height:22px;text-align:start">This document contains a set of recommended guidelines, conventions, and best practices for writing code in our Swift code base. The main motivation for this guide is to improve the readability of the code base. Remember that code is read much more often than it is written, and that 80% of the lifetime cost of software goes to maintenance. In TangoCode we are committed to improve our software quality and this is one of the steps towards that goal.</p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;font-size:14px;line-height:22px;text-align:start">Note that the purpose of this guide is not to convince any one that whatever listed below is the best way of doing something. The idea is to keep a set of recommended guidelines for everyone to follow in order to make the code more consistent, understandable, and less prone to unobvious pitfalls.</p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;font-size:14px;line-height:22px;text-align:start"><b>Note:</b>&nbsp;Suggestions for improvements are highly encouraged.</p>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><span style="font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;vertical-align:baseline;white-space:pre-wrap"><font size="6"><u>GUIDELINES</u></font></span></p>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><span style="font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-wrap"><font size="6"><br>
+</font></span></p>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><span style="font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-wrap"><font size="5">Header Comments</font></span></p>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><span style="font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-wrap"><font size="5"><br>
+</font></span></p>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><span style="font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-wrap"><font size="2">Every class, interface, procedure, web panel, etc must include the following comment structure in the header of the file. Comments should be in english ONLY</font></span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="text-align:center;font-size:10pt;line-height:1.6;color:rgb(68,68,68);background-color:transparent;font-family:Arial,Verdana,sans-serif">This should include what the object does (What is the main purpose of this object)</span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:10pt;line-height:1.6;text-align:center;background-color:transparent"><b>author:</b> Name of the person who created it&nbsp;</span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:10pt;line-height:1.6;text-align:center;background-color:transparent"><b>created:</b> Date when the object was created, date should be in this format YYYY-MM-DD&nbsp;</span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:10pt;line-height:1.6;text-align:center;background-color:transparent"><b>changes:</b> Describe the change done. Leave empty if no modification has been made. If changes, include the Date (YYYY-MM-DD), Name of who made the change,&nbsp;</span><span style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:10pt;line-height:1.6;text-align:center;background-color:transparent">XPM Id and what was the change made&nbsp;</span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:10pt;line-height:1.6;text-align:center;background-color:transparent"><b>xpm:(Optional)</b> Id of the original story in XPM when this object was created</span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:10pt;line-height:1.6;text-align:center;background-color:transparent">e.g</span></p>
+<pre style="padding:6px 10px;font-family:Monaco,Menlo,Consolas,Courier New,monospace;color:rgb(51,51,51);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;margin-top:15px;margin-bottom:15px;line-height:19px;word-break:break-all;word-wrap:break-word;white-space:pre-wrap;background-color:rgb(248,248,248);border:1px solid rgb(204,204,204);overflow:auto;text-align:start">/**<br>This is a class that implements the protocol Section and represents a specific section. This kind of section is what we called a TabBar section.<br>    <br>author: jhidalgo<br>    <br>created: 2015-08-04<br>*/
+</pre>
+<div>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><span style="font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-weight:bold;vertical-align:baseline;white-space:pre-wrap"><font size="5">Method Comments</font></span></p>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><span style="font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-weight:bold;vertical-align:baseline;white-space:pre-wrap"><font size="5"><br>
+</font></span></p>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><span style="font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-wrap"><font size="2">Use this to comment structure for methods that provide important functionality in your code. Getters or Setters do not need to be commented because they are self explanatory. Comments should be in english ONLY</font></span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="text-align:center;font-size:10pt;line-height:1.6;color:rgb(68,68,68);background-color:transparent;font-family:Arial,Verdana,sans-serif"><b>functionality:</b>&nbsp;This should include what the object does (What is the main purpose of this object)</span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:10pt;line-height:1.6;text-align:center;background-color:transparent"><b>author:</b>&nbsp;Name of the person who created it&nbsp;</span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:10pt;line-height:1.6;text-align:center;background-color:transparent"><b>created:</b>&nbsp;Date when the object was created, date should be in this format YYYY-MM-DD&nbsp;</span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="font-size:10pt;background-color:transparent"><b>param:</b> Parameters that the method receives, create as many parameters as your method receives. Leave empty if the method does not receive parameters</span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><b>returns:</b> What the method returns</p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:10pt;line-height:1.6;text-align:center;background-color:transparent">e.g</span></p>
+<pre style="padding:6px 10px;font-family:Monaco,Menlo,Consolas,Courier New,monospace;color:rgb(51,51,51);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;margin-top:15px;margin-bottom:15px;line-height:19px;word-break:break-all;word-wrap:break-word;white-space:pre-wrap;background-color:rgb(248,248,248);border:1px solid rgb(204,204,204);overflow:auto;text-align:start">/**<br>This method returns a UIScrollView that depicts the content of a specified tab (not the tab bar but the content). One important thing is that it's return type is UIScrollView so we can handle different sizes of SectionList without having issues because the whole list takes more space than the device's screen height.<br>    <br>author: jhidalgo<br>    <br>created: 2015-08-04<br>    <br>:param: index:Int - Index of the tab you want content of.<br>    <br>:returns: UIScrollView - Content drawn in a UIScrollView<br>*/
+
+</pre>
+</div>
+<div>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><span style="font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-weight:bold;vertical-align:baseline;white-space:pre-wrap"><font size="5">Inline Comments</font></span></p>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><span style="font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-weight:bold;vertical-align:baseline;white-space:pre-wrap"><font size="5"><br>
+</font></span></p>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify">Use this to comment structure for methods that provide important functionality in your code. Getters or Setters do not need to be commented because they are self explanatory. Comments should be in english ONLY</p>
+</div>
+<div><br>
+</div>
+<div>
+<div>
+<pre style="padding:6px 10px;font-family:Monaco,Menlo,Consolas,Courier New,monospace;color:rgb(51,51,51);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;margin-top:15px;margin-bottom:15px;line-height:19px;word-break:break-all;word-wrap:break-word;white-space:pre-wrap;background-color:rgb(248,248,248);border:1px solid rgb(204,204,204);overflow:auto;text-align:start">Good Example
+// display state selection for US users
+var countryCode = getCountry()
+if (countryCode == 'US') {
+    println()
+}
+
+Bad Example
+// get the country code
+countryCode = getCountry()
+// if country code is US
+if (countryCode == 'US') {
+    // display the form input for state
+    println()
+}
+
+</pre>
+</div>
+<div></div>
+</div>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><br>
+</p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><font size="5"><b>Object Naming</b></font></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start">This applies to Classes, Interfaces, Protocols, Enums. Objects names are written in UpperCamelCase</p>
+<div>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:10pt;line-height:1.6;text-align:center;background-color:transparent">e.g</span></p>
+<pre style="padding:6px 10px;font-family:Monaco,Menlo,Consolas,Courier New,monospace;color:rgb(51,51,51);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;margin-top:15px;margin-bottom:15px;line-height:19px;word-break:break-all;word-wrap:break-word;white-space:pre-wrap;background-color:rgb(248,248,248);border:1px solid rgb(204,204,204);overflow:auto;text-align:start">class MapApple: NSObject{
+}
+</pre>
+</div>
+<div><br>
+</div>
+<div>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><font size="5"><b>Method Naming</b></font></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start">Method names are written in lowerCamelCase</p>
+<div>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:10pt;line-height:1.6;text-align:center;background-color:transparent">e.g</span></p>
+<pre style="padding:6px 10px;font-family:Monaco,Menlo,Consolas,Courier New,monospace;color:rgb(51,51,51);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;margin-top:15px;margin-bottom:15px;line-height:19px;word-break:break-all;word-wrap:break-word;white-space:pre-wrap;background-color:rgb(248,248,248);border:1px solid rgb(204,204,204);overflow:auto;text-align:start">func didTapOnMap(tapRecognizer : UITapGestureRecognizer){
+  }
+</pre>
+</div>
+</div>
+<div><br>
+</div>
+<div>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><font size="5"><b>Variables Naming</b></font></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="font-size:10pt;background-color:transparent">&nbsp;Member variables, local variables and Non-constant field names are written in lowerCamelCase.</span></p>
+<div>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:10pt;line-height:1.6;text-align:center;background-color:transparent">e.g</span></p>
+<pre style="padding:6px 10px;font-family:Monaco,Menlo,Consolas,Courier New,monospace;color:rgb(51,51,51);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;margin-top:15px;margin-bottom:15px;line-height:19px;word-break:break-all;word-wrap:break-word;white-space:pre-wrap;background-color:rgb(248,248,248);border:1px solid rgb(204,204,204);overflow:auto;text-align:start">var listOfAllShapes : [MapPoint] = [MapPoint]()
+var delegate : MapRenderDelegate!
+</pre>
+</div>
+</div>
+<div>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><font size="5"><b><br>
+</b></font></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><font size="5"><b>Constants Naming</b></font></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="font-size:10pt;background-color:transparent">&nbsp;</span><span style="font-size:10pt;background-color:transparent">Constant names use CONSTANT_CASE</span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="font-size:10pt;line-height:1.6;background-color:transparent;text-align:center;color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif">e.g</span></p>
+<div>
+<pre style="padding:6px 10px;font-family:Monaco,Menlo,Consolas,Courier New,monospace;color:rgb(51,51,51);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;margin-top:15px;margin-bottom:15px;line-height:19px;word-break:break-all;word-wrap:break-word;white-space:pre-wrap;background-color:rgb(248,248,248);border:1px solid rgb(204,204,204);overflow:auto;text-align:start">let MAX_ZOOM_VALUE = 180.0
+let MIN_DISTANCE_TO_LINE = 22
+let OVERLAY_DEFAULT_COLOR = UIColor.blueColor()
+let OVERLAY_SELECTED_COLOR = UIColor.redColor()
+</pre>
+</div>
+</div>
+<div>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><font size="5"><b><br>
+</b></font></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><font size="5"><b>Parameters Naming</b></font></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start">Parameter names are written in lowerCamelCase.</p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="font-size:10pt;line-height:1.6;background-color:transparent;text-align:center;color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif">e.g</span></p>
+<div>
+<pre style="padding:6px 10px;font-family:Monaco,Menlo,Consolas,Courier New,monospace;color:rgb(51,51,51);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;margin-top:15px;margin-bottom:15px;line-height:19px;word-break:break-all;word-wrap:break-word;white-space:pre-wrap;background-color:rgb(248,248,248);border:1px solid rgb(204,204,204);overflow:auto;text-align:start">func didTapOnMap(tapRecognizer : UITapGestureRecognizer){
+}
+</pre>
+</div>
+</div>
+<div>
+<div>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><font size="5"><b><br>
+</b></font></p>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><font size="5"><b>Control flow statements (Conditions / Loops / etc.) </b></font></p>
+<div><br>
+</div>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify">Brackets go on the same line as the conditions, e.g.</p>
+</div>
+<div><br>
+</div>
+<div>
+<div>
+<pre style="padding:6px 10px;font-family:Monaco,Menlo,Consolas,Courier New,monospace;color:rgb(51,51,51);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;margin-top:15px;margin-bottom:15px;line-height:19px;word-break:break-all;word-wrap:break-word;white-space:pre-wrap;background-color:rgb(248,248,248);border:1px solid rgb(204,204,204);overflow:auto;text-align:start">if (foobar) {
+    ...
+} else {
+    ...
+}
+for (foo; foo; foo) {
+    ...
+}
+</pre>
+</div>
+<div></div>
+</div>
+</div>
+<div>
+<div style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:21px;text-align:center;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"></div>
+<div style="color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:21px;text-align:center;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px">
+<div>
+<p dir="ltr" style="font-weight:normal;font-size:13px;line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><font size="5"><b><br>
+</b></font></p>
+<p dir="ltr" style="line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify"><font size="5"><b>Single line control flow statements</b></font></p>
+<div style="font-weight:normal;font-size:13px"><br>
+</div>
+<p dir="ltr" style="font-weight:normal;font-size:13px;line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;text-align:justify">Should still have braces. e.g.</p>
+</div>
+<div style="font-weight:normal;font-size:13px"><br>
+</div>
+<div style="font-weight:normal;font-size:13px">
+<div>
+<pre style="padding:6px 10px;font-family:Monaco,Menlo,Consolas,Courier New,monospace;color:rgb(51,51,51);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;margin-top:15px;margin-bottom:15px;line-height:19px;word-break:break-all;word-wrap:break-word;white-space:pre-wrap;background-color:rgb(248,248,248);border:1px solid rgb(204,204,204);overflow:auto;text-align:start">if (foobar) {
+    ...
+} else {
+    ...
+}
+</pre>
+</div>
+<div></div>
+</div>
+</div>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><font size="5"><b><br>
+</b></font></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><font size="5"><b>TODOs / FIXMEs / DRAGONs</b></font></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start">Use comment lines right inside the code with standard formats that indicated the severity of the technical debt, the rough estimate of its effort, and the name of the individual that discovered it or made the decision to implement it. Comments should be in english ONLY</p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="font-size:10pt;background-color:transparent"><b>Severity types:</b></span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="font-size:10pt;background-color:transparent">TODO: Something that would not affect the end user of the product but would be a nice thing to address for maintainability or performance.</span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start">FIXME Was something that had a chance of affecting the end user or at least compromise the running system in some way.</p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start">DRAGON. A disaster waiting to happen and needs to be fixed asap</p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="font-size:10pt;background-color:transparent"><b>Estimate:</b></span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="font-size:10pt;background-color:transparent">SMALL: Being a day or less</span></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start">MEDIUM: Being on the order of days to a week</p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start">LARGE: Being more than a week</p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><span style="font-size:10pt;line-height:1.6;background-color:transparent;text-align:center;color:rgb(68,68,68);font-family:Arial,Verdana,sans-serif">e.g</span></p>
+<div>
+<pre style="padding:6px 10px;font-family:Monaco,Menlo,Consolas,Courier New,monospace;color:rgb(51,51,51);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;margin-top:15px;margin-bottom:15px;line-height:19px;word-break:break-all;word-wrap:break-word;white-space:pre-wrap;background-color:rgb(248,248,248);border:1px solid rgb(204,204,204);overflow:auto;text-align:start">//DRAGON MEDIUM (jvalencia): Added this for some reason
+var adjustErrorWidth = 320
+
+</pre>
+</div>
+</div>
+<div><br>
+</div>
+<div>
+<div style="text-align:left"><font size="5"><b>One statement per line</b></font></div>
+<div style="text-align:left">Each statement is followed by a line-break.</div>
+<div style="text-align:left"><br>
+</div>
+<div style="text-align:left"><font size="5"><b>Column limit</b></font></div>
+<div style="text-align:left">Each sentence should not have more than 100 characters</div>
+<div style="text-align:left"><br>
+</div>
+<div style="text-align:left"><b><font size="5">Extra lines</font></b></div>
+<div style="text-align:left">Commented Code should be removed unless there is a specific reason where the Team and PO agreed to keep it</div>
+<div style="text-align:left">Logs that are not useful should be deleted</div>
+</div>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><b><font size="5">Whitespaces</font></b></p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;font-size:14px;line-height:22px;text-align:start">Space only. 4-space indents.</p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;font-size:14px;line-height:22px;text-align:start">Make sure you have&nbsp;<i>Automatically trim trailing whitespace</i>&nbsp;and&nbsp;<i>Including whitespace-only lines</i>&nbsp;enabled in Xcode.</p>
+<p style="margin:15px 0px;color:rgb(51,51,51);font-family:Helvetica,arial,sans-serif;line-height:22px;text-align:start"><u style="color:rgb(0,0,0);font-family:Arial;font-weight:bold;line-height:44px;text-align:justify;white-space:pre-wrap"><font size="6"><br>
+</font></u></p>
+<p style="text-align:justify;margin:15px 0px"><font color="#000000" face="Arial" size="6"><span style="line-height:44px;white-space:pre-wrap"><b><u>BEST PRACTICES</u></b></span></font></p>
+<p style="text-align:justify;margin:15px 0px"><b style="line-height:44px;white-space:pre-wrap;color:rgb(0,0,0);font-family:Arial"><font size="5">Multiple Optional Binding</font></b></p>
+<p style="text-align:justify;margin:15px 0px">&nbsp;Swift 1.2 and higher now allows you to optionally bind multiple things in one line. Our style guide recommends using this new style, rather than the old style of multiple if let statements:</p>
+<div>
+<pre style="padding:6px 10px;font-family:Monaco,Menlo,Consolas,Courier New,monospace;color:rgb(51,51,51);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;margin-top:15px;margin-bottom:15px;line-height:19px;word-break:break-all;word-wrap:break-word;white-space:pre-wrap;background-color:rgb(248,248,248);border:1px solid rgb(204,204,204);overflow:auto;text-align:start"><p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo;color:rgb(0,132,0)"><span style="color:#000000">&nbsp;</span>// old</p>
+<p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo">&nbsp; &nbsp; <span style="color:#bb2ca2">if</span> <span style="color:#bb2ca2">let</span> widget = widget {</p>
+<p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#bb2ca2">if</span> <span style="color:#bb2ca2">let</span> url = options.url {</p>
+<p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#bb2ca2">if</span> <span style="color:#bb2ca2">let</span> host = options.host {</p>
+<p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo;color:rgb(0,132,0)"><span style="color:#000000">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>// widget, url, and host are all non-optionals</p>
+<p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p>
+<p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo">&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+<p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo">&nbsp; &nbsp; }</p>
+<p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo;min-height:13px">&nbsp;&nbsp; &nbsp;</p><p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo;color:rgb(0,132,0)"><span style="color:#000000">&nbsp; &nbsp; </span>// new</p>
+<p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo">&nbsp; &nbsp; <span style="color:#bb2ca2">if</span> <span style="color:#bb2ca2">let</span> widget = widget, url = options.url, host = options.host {</p>
+<p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo;color:rgb(0,132,0)"><span style="color:#000000">&nbsp; &nbsp; &nbsp; &nbsp; </span>// widget, url, and host are all non-optionals</p>
+<p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo">&nbsp; &nbsp; }</p>
+</pre>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</h3>
+<div>
+<p style="font-size:13.3333px;line-height:21.3333px;text-align:justify;margin:15px 0px"><b style="line-height:44px;white-space:pre-wrap;color:rgb(0,0,0);font-family:Arial"><font size="5">Optional Chaining</font></b></p>
+<p style="line-height:21.3333px;text-align:justify;margin:15px 0px"><span style="font-size:13.3333px">We know that force unwrapping is not a good practice in Swift. For instance we want to avoid this kind of code:&nbsp;</span><span style="text-align:center;line-height:1.6;background-color:transparent"><font face="arial, sans-serif"><font size="3" style="font-weight:bold">order.person!.address!.state!.&nbsp;</font></font></span><span style="font-size:13.3333px;font-family:arial,sans-serif;line-height:1.6;text-align:center;background-color:transparent">Where person is an optional object inside Order and <b>address</b> and &nbsp;<b>states </b>are optional strings properties:</span></p>
+<font color="#000000">
+<div style="text-align:left"></div>
+<div style="text-align:left"></div>
+<div style="text-align:left"></div>
+<div class="sites-codeblock sites-codesnippet-block">
+<div style="text-align:left"><span style="font-family:Arial,Verdana,sans-serif;line-height:1.6;font-size:10pt;background-color:transparent"><sup><code>if let myState = order.person?.address?.state {</code></sup></span></div>
+<div style="text-align:left"><span style="font-family:Arial,Verdana,sans-serif;line-height:1.6;font-size:10pt;background-color:transparent"><sup><code>&nbsp; &nbsp;print("This order will be shipped to \(myState)")</code></sup></span></div>
+<div style="text-align:left"><span style="font-family:Arial,Verdana,sans-serif;line-height:1.6;font-size:10pt;background-color:transparent"><sup><code>} else {&nbsp;</code></sup></span></div>
+<div style="text-align:left"><span style="font-family:Arial,Verdana,sans-serif;line-height:1.6;font-size:10pt;background-color:transparent"><sup><code>print("Unknown person, address, or state.")&nbsp;</code></sup></span></div>
+<div style="text-align:left"><span style="font-family:Arial,Verdana,sans-serif;line-height:1.6;font-size:10pt;background-color:transparent"><sup><code>}</code></sup></span></div>
+</div>
+</font></div>
+<h2 style="margin-top:1em;margin-bottom:16px;line-height:1.225;font-size:1.75em;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238);color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start">Classes and Structures</h2>
+<h3 align="left" style="text-align:left">
+<table cellspacing="0" style="line-height:1.6;font-size:10pt"></table>
+</h3>
+<h3 style="margin-top:1em;margin-bottom:16px;line-height:1.43;font-size:1.5em;font-weight:bold;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start"><a href="https://github.com/raywenderlich/swift-style-guide#which-one-to-use" style="background-color:transparent;color:rgb(64,120,192);text-decoration:none;display:block;padding-right:6px;padding-left:30px;line-height:1.2"></a>Which one to use?</h3>
+<h3 align="left" style="text-align:left">
+<table cellspacing="0" style="line-height:1.6;font-size:10pt">
+<tbody>
+<tr>
+<td style="width:1093px;height:200px">
+<div dir="ltr">
+<div style="text-align:center"></div>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px"><font size="2">Remember, structs have&nbsp;<a href="https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_144" style="background-color:transparent;color:rgb(64,120,192);text-decoration:none">value semantics</a>. Use structs for things that do not have an identity. An array that contains [a, b, c] is really the same as another array that contains [a, b, c] and they are completely interchangeable. It doesn't matter whether you use the first array or the second, because they represent the exact same thing. That's why arrays are structs.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px"><font size="2">Classes have&nbsp;<a href="https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145" style="background-color:transparent;color:rgb(64,120,192);text-decoration:none">reference semantics</a>. Use classes for things that do have an identity or a specific life cycle. You would model a person as a class because two person objects are two different things. Just because two people have the same name and birthdate, doesn't mean they are the same person. But the person's birthdate would be a struct because a date of 3 March 1950 is the same as any other date object for 3 March 1950. The date itself doesn't have an identity.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px"><font size="2">Sometimes, things should be structs but need to conform to&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">AnyObject</code>&nbsp;or are historically modeled as classes already (<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">NSDate</code>,&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">NSSet</code>). Try to follow these guidelines as closely as possible.</font></p>
+</td>
+</tr>
+</tbody>
+</table>
+</h3>
+<h3 style="margin-top:1em;margin-bottom:16px;line-height:1.43;font-size:1.5em;font-weight:bold;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start"><a href="https://github.com/raywenderlich/swift-style-guide#example-definition" style="background-color:transparent;color:rgb(64,120,192);text-decoration:none;display:block;padding-right:6px;padding-left:30px;line-height:1.2"></a>Example definition</h3>
+<h3 align="left" style="text-align:left">
+<table cellspacing="0" style="line-height:1.6;font-size:10pt">
+<tbody>
+<tr>
+<td style="width:1093px;height:860px">
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px"><font size="2">Here's an example of a well-styled class definition:</font></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">class</span> Circle: Shape {
+  <span style="color:rgb(167,29,93)">var</span> x: <span style="color:rgb(0,134,179)">Int</span>, y: <span style="color:rgb(0,134,179)">Int</span>
+  <span style="color:rgb(167,29,93)">var</span> radius: <span style="color:rgb(0,134,179)">Double</span>
+  <span style="color:rgb(167,29,93)">var</span> diameter: <span style="color:rgb(0,134,179)">Double</span> {
+    <span style="color:rgb(167,29,93)">get</span> {
+      <span style="color:rgb(167,29,93)">return</span> radius <span style="color:rgb(167,29,93)">*</span> <span style="color:rgb(0,134,179)">2</span>
+    }
+    <span style="color:rgb(167,29,93)">set</span> {
+      radius <span style="color:rgb(167,29,93)">=</span> newValue <span style="color:rgb(167,29,93)">/</span> <span style="color:rgb(0,134,179)">2</span>
+    }
+  }
+
+  <span style="color:rgb(167,29,93)">init</span>(x: <span style="color:rgb(0,134,179)">Int</span>, y: <span style="color:rgb(0,134,179)">Int</span>, radius: <span style="color:rgb(0,134,179)">Double</span>) {
+    <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>x <span style="color:rgb(167,29,93)">=</span> x
+    <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>y <span style="color:rgb(167,29,93)">=</span> y
+    <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>radius <span style="color:rgb(167,29,93)">=</span> radius
+  }
+
+  <span style="color:rgb(167,29,93)">convenience</span> <span style="color:rgb(167,29,93)">init</span>(x: <span style="color:rgb(0,134,179)">Int</span>, y: <span style="color:rgb(0,134,179)">Int</span>, diameter: <span style="color:rgb(0,134,179)">Double</span>) {
+    <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span><span style="color:rgb(167,29,93)">init</span>(x: x, y: y, radius: diameter <span style="color:rgb(167,29,93)">/</span> <span style="color:rgb(0,134,179)">2</span>)
+  }
+
+  <span style="color:rgb(167,29,93)">func</span> <span style="color:rgb(121,93,163)">describe</span>() <span style="color:rgb(167,29,93)">-&gt;</span> <span style="color:rgb(0,134,179)">String</span> {
+    <span style="color:rgb(167,29,93)">return</span> <span style="color:rgb(24,54,145)"><span>"</span>I am a circle at <span>\(</span><span style="color:rgb(51,51,51)">centerString()</span><span>)</span> with an area of <span>\(</span><span style="color:rgb(51,51,51)">computeArea()</span><span>)</span><span>"</span></span>
+  }
+
+  <span style="color:rgb(167,29,93)">override</span> <span style="color:rgb(167,29,93)">func</span> <span style="color:rgb(121,93,163)">computeArea</span>() <span style="color:rgb(167,29,93)">-&gt;</span> <span style="color:rgb(0,134,179)">Double</span> {
+    <span style="color:rgb(167,29,93)">return</span> M_PI <span style="color:rgb(167,29,93)">*</span> radius <span style="color:rgb(167,29,93)">*</span> radius
+  }
+
+  <span style="color:rgb(167,29,93)">private</span> <span style="color:rgb(167,29,93)">func</span> <span style="color:rgb(121,93,163)">centerString</span>() <span style="color:rgb(167,29,93)">-&gt;</span> <span style="color:rgb(0,134,179)">String</span> {
+    <span style="color:rgb(167,29,93)">return</span> <span style="color:rgb(24,54,145)"><span>"</span>(<span>\(</span><span style="color:rgb(51,51,51)">x</span><span>)</span>,<span>\(</span><span style="color:rgb(51,51,51)">y</span><span>)</span>)<span>"</span></span>
+  }
+}</pre>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px"><font size="2">The example above demonstrates the following style guidelines:</font></p>
+<ul style="padding:0px 0px 0px 2em;margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px"><li><font size="2">Specify types for properties, variables, constants, argument declarations and other statements with a space after the colon but not before, e.g.&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">x: Int</code>, and&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">Circle: Shape</code>.</font></li>
+<li><font size="2">Define multiple variables and structures on a single line if they share a common purpose / context.</font></li>
+<li><font size="2">Indent getter and setter definitions and property observers.</font></li>
+<li><font size="2">Don't add modifiers such as&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">internal</code>&nbsp;when they're already the default. Similarly, don't repeat the access modifier when overriding a method.</font></li></ul>
+</td>
+</tr>
+</tbody>
+</table>
+</h3>
+<h3 style="margin-top:1em;margin-bottom:16px;line-height:1.43;font-weight:bold;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start"><font size="5">Use of Self</font></h3>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">For conciseness, avoid using&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">self</code>&nbsp;since Swift does not require it to access an object's properties or invoke its methods.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">Use&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">self</code>&nbsp;when required to differentiate between property names and arguments in initializers, and when referencing properties in closure expressions (as required by the compiler):</font></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">class</span> BoardLocation {
+  <span style="color:rgb(167,29,93)">let</span> row: <span style="color:rgb(0,134,179)">Int</span>, column: <span style="color:rgb(0,134,179)">Int</span>
+
+  <span style="color:rgb(167,29,93)">init</span>(row: <span style="color:rgb(0,134,179)">Int</span>, column: <span style="color:rgb(0,134,179)">Int</span>) {
+    <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>row <span style="color:rgb(167,29,93)">=</span> row
+    <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>column <span style="color:rgb(167,29,93)">=</span> column
+
+    <span style="color:rgb(167,29,93)">let</span> closure <span style="color:rgb(167,29,93)">=</span> {
+      println(<span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>row)
+    }
+  }
+}</pre>
+</div>
+<br>
+<h3 style="margin-top:1em;margin-bottom:16px;line-height:1.43;font-weight:bold;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start"><font size="5">Protocol Conformance</font></h3>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">When adding protocol conformance to a class, prefer adding a separate class extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">Also, don't forget the&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">// MARK: -</code>&nbsp;comment to keep things well-organized!</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start"><strong>Preferred:</strong></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">class</span> MyViewcontroller: UIViewController {
+  <span style="color:rgb(150,152,150)">// class stuff here</span>
+}
+
+<span style="color:rgb(150,152,150)">// MARK: - UITableViewDataSource</span>
+<span style="color:rgb(167,29,93)">extension</span> MyViewcontroller: UITableViewDataSource {
+  <span style="color:rgb(150,152,150)">// table view data source methods</span>
+}
+
+<span style="color:rgb(150,152,150)">// MARK: - UIScrollViewDelegate</span>
+<span style="color:rgb(167,29,93)">extension</span> MyViewcontroller: UIScrollViewDelegate {
+  <span style="color:rgb(150,152,150)">// scroll view delegate methods</span>
+}</pre>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start"><strong>Not Preferred:</strong></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">class</span> MyViewcontroller: UIViewController, UITableViewDataSource, UIScrollViewDelegate {
+  <span style="color:rgb(150,152,150)">// all methods</span>
+}</pre>
+</div>
+<h3 style="margin-top:1em;margin-bottom:16px;line-height:1.43;font-size:1.5em;font-weight:bold;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start"><a href="https://github.com/raywenderlich/swift-style-guide#computed-properties" style="background-color:transparent;color:rgb(64,120,192);text-decoration:none;display:block;padding-right:6px;padding-left:30px;line-height:1.2"></a></h3>
+<h3 style="margin-top:1em;margin-bottom:16px;line-height:1.43;font-weight:bold;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start"><font size="5">Computed Properties</font></h3>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">For conciseness, if a computed property is read-only, omit the get clause. The get clause is required only when a set clause is provided.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start"><strong>Preferred:</strong></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">var</span> diameter: <span style="color:rgb(0,134,179)">Double</span> {
+  <span style="color:rgb(167,29,93)">return</span> radius <span style="color:rgb(167,29,93)">*</span> <span style="color:rgb(0,134,179)">2</span>
+}</pre>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start"><strong>Not Preferred:</strong></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">var</span> diameter: <span style="color:rgb(0,134,179)">Double</span> {
+  <span style="color:rgb(167,29,93)">get</span> {
+    <span style="color:rgb(167,29,93)">return</span> radius <span style="color:rgb(167,29,93)">*</span> <span style="color:rgb(0,134,179)">2</span>
+  }
+}</pre>
+</div>
+<h2 style="margin-top:1em;margin-bottom:16px;line-height:1.225;font-size:1.75em;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238);color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start"><a href="https://github.com/raywenderlich/swift-style-guide#function-declarations" style="background-color:transparent;color:rgb(64,120,192);text-decoration:none;display:block;padding-right:6px;padding-left:30px;line-height:1"></a>Function Declarations</h2>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">Keep short function declarations on one line including the opening brace</font><span style="font-size:16px">:</span></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">func</span> <span style="color:rgb(121,93,163)">reticulateSplines</span>(spline: [<span style="color:rgb(0,134,179)">Double</span>]) <span style="color:rgb(167,29,93)">-&gt;</span> <span style="color:rgb(0,134,179)">Bool</span> {
+  <span style="color:rgb(150,152,150)">// reticulate code goes here</span>
+}</pre>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">For functions with long signatures, add line breaks at appropriate points and add an extra indent on subsequent lines:</font></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">func</span> <span style="color:rgb(121,93,163)">reticulateSplines</span>(spline: [<span style="color:rgb(0,134,179)">Double</span>], adjustmentFactor: <span style="color:rgb(0,134,179)">Double</span>,
+    translateConstant: <span style="color:rgb(0,134,179)">Int</span>, comment: <span style="color:rgb(0,134,179)">String</span>) <span style="color:rgb(167,29,93)">-&gt;</span> <span style="color:rgb(0,134,179)">Bool</span> {
+  <span style="color:rgb(150,152,150)">// reticulate code goes here</span>
+}</pre>
+</div>
+<h2 style="margin-top:1em;margin-bottom:16px;line-height:1.225;font-size:1.75em;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238);color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start"><a href="https://github.com/raywenderlich/swift-style-guide#closure-expressions" style="background-color:transparent;color:rgb(64,120,192);text-decoration:none;display:block;padding-right:6px;padding-left:30px;line-height:1"></a></h2>
+<h2 style="margin-top:1em;margin-bottom:16px;line-height:1.225;font-size:1.75em;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238);color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start">Closure Expressions</h2>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">Use trailing closure syntax only if there's a single closure expression parameter at the end of the argument list. Give the closure parameters descriptive names.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start"><strong>Preferred:</strong></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal">UIView<span style="color:rgb(167,29,93)">.</span>animateWithDuration(<span style="color:rgb(0,134,179)">1</span><span style="color:rgb(167,29,93)">.</span><span style="color:rgb(0,134,179)">0</span>) {
+  <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>myView<span style="color:rgb(167,29,93)">.</span>alpha <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(0,134,179)">0</span>
+}
+
+UIView<span style="color:rgb(167,29,93)">.</span>animateWithDuration(<span style="color:rgb(0,134,179)">1</span><span style="color:rgb(167,29,93)">.</span><span style="color:rgb(0,134,179)">0</span>,
+  animations: {
+    <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>myView<span style="color:rgb(167,29,93)">.</span>alpha <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(0,134,179)">0</span>
+  },
+  completion: { finished <span style="color:rgb(167,29,93)">in</span>
+    <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>myView<span style="color:rgb(167,29,93)">.</span>removeFromSuperview()
+  }
+)</pre>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start"><strong>Not Preferred:</strong></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal">UIView<span style="color:rgb(167,29,93)">.</span>animateWithDuration(<span style="color:rgb(0,134,179)">1</span><span style="color:rgb(167,29,93)">.</span><span style="color:rgb(0,134,179)">0</span>, animations: {
+  <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>myView<span style="color:rgb(167,29,93)">.</span>alpha <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(0,134,179)">0</span>
+})
+
+UIView<span style="color:rgb(167,29,93)">.</span>animateWithDuration(<span style="color:rgb(0,134,179)">1</span><span style="color:rgb(167,29,93)">.</span><span style="color:rgb(0,134,179)">0</span>,
+  animations: {
+    <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>myView<span style="color:rgb(167,29,93)">.</span>alpha <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(0,134,179)">0</span>
+  }) { f <span style="color:rgb(167,29,93)">in</span>
+    <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>myView<span style="color:rgb(167,29,93)">.</span>removeFromSuperview()
+}</pre>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">For single-expression closures where the context is clear, use implicit returns:</font></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal">attendeeList<span style="color:rgb(167,29,93)">.</span><span style="color:rgb(0,134,179)">sort</span> { a, b <span style="color:rgb(167,29,93)">in</span>
+  a <span style="color:rgb(167,29,93)">&gt;</span> b
+}</pre>
+</div>
+<h2 style="margin-top:1em;margin-bottom:16px;line-height:1.225;font-size:1.75em;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238);color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start"><a href="https://github.com/raywenderlich/swift-style-guide#types" style="background-color:transparent;color:rgb(64,120,192);text-decoration:none;display:block;padding-right:6px;padding-left:30px;line-height:1"></a></h2>
+<div style="text-align:right">
+<h2 style="margin-top:1em;margin-bottom:16px;line-height:1.225;font-size:1.75em;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238);color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start">Types</h2>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">Always use Swift's native types when available. Swift offers bridging to Objective-C so you can still use the full set of methods as needed.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start"><strong>Preferred:</strong></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">let</span> width <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(0,134,179)">120</span><span style="color:rgb(167,29,93)">.</span><span style="color:rgb(0,134,179)">0</span>                                    <span style="color:rgb(150,152,150)">// Double</span>
+<span style="color:rgb(167,29,93)">let</span> widthString <span style="color:rgb(167,29,93)">=</span> (width <span style="color:rgb(167,29,93)">as</span> NSNumber)<span style="color:rgb(167,29,93)">.</span><span style="color:rgb(0,134,179)">stringValue</span>    <span style="color:rgb(150,152,150)">// String</span></pre>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start"><strong>Not Preferred:</strong></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">let</span> width: NSNumber <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(0,134,179)">120</span><span style="color:rgb(167,29,93)">.</span><span style="color:rgb(0,134,179)">0</span>                          <span style="color:rgb(150,152,150)">// NSNumber</span>
+<span style="color:rgb(167,29,93)">let</span> widthString: NSString <span style="color:rgb(167,29,93)">=</span> width<span style="color:rgb(167,29,93)">.</span><span style="color:rgb(0,134,179)">stringValue</span>        <span style="color:rgb(150,152,150)">// NSString</span></pre>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">In Sprite Kit code, use&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">CGFloat</code>&nbsp;if it makes the code more succinct by avoiding too many conversions.</font></p>
+</div>
+<h3 style="margin-top:1em;margin-bottom:16px;line-height:1.43;font-weight:bold;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start"><font size="5">Constants</font></h3>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">Constants are defined using the&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">let</code>&nbsp;keyword, and variables with the&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">var</code>&nbsp;keyword. Always use&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">let</code>instead of&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">var</code>&nbsp;if the value of the variable will not change.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2"><strong>Tip:</strong>&nbsp;A good technique is to define everything using&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">let</code>&nbsp;and only change it to&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">var</code>&nbsp;if the compiler complains!</font></p>
+<h3 style="margin-top:1em;margin-bottom:16px;line-height:1.43;font-weight:bold;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;text-align:start"><font size="5">Optionals</font></h3>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">Declare variables and function return types as optional with&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">?</code>&nbsp;where a nil value is acceptable.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">Use implicitly unwrapped types declared with&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">!</code>&nbsp;only for instance variables that you know will be initialized later before use, such as subviews that will be set up in&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">viewDidLoad</code>.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">When accessing an optional value, use optional chaining if the value is only accessed once or if there are many optionals in the chain:</font></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>textContainer?<span style="color:rgb(167,29,93)">.</span>textLabel?<span style="color:rgb(167,29,93)">.</span>setNeedsDisplay()</pre>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">Use optional binding when it's more convenient to unwrap once and perform multiple operations:</font></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">if</span> <span style="color:rgb(167,29,93)">let</span> textContainer <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(167,29,93)">self</span><span style="color:rgb(167,29,93)">.</span>textContainer {
+  <span style="color:rgb(150,152,150)">// do many things with textContainer</span>
+}</pre>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">When naming optional variables and properties, avoid naming them like&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">optionalString</code>&nbsp;or&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">maybeView</code>&nbsp;since their optional-ness is already in the type declaration.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;line-height:25px;text-align:start"><font size="2">For optional binding, shadow the original name when appropriate rather than using names like&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">unwrappedView</code>&nbsp;or&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">actualLabel</code>.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start"><strong>Preferred:</strong></p>
+<div style="margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">var</span> subview: UIView?
+<span style="color:rgb(167,29,93)">var</span> volume: <span style="color:rgb(0,134,179)">Double</span>?
+
+<span style="color:rgb(150,152,150)">// later on...</span>
+<span style="color:rgb(167,29,93)">if</span> <span style="color:rgb(167,29,93)">let</span> subview <span style="color:rgb(167,29,93)">=</span> subview, volume <span style="color:rgb(167,29,93)">=</span> volume {
+  <span style="color:rgb(150,152,150)">// do something with unwrapped subview and volume</span>
+}</pre>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;line-height:25px;text-align:start"><strong>Not Preferred:</strong></p>
+<h3 style="margin-top:1em;margin-bottom:16px;line-height:1.43;font-size:1.5em;font-weight:bold;color:rgb(51,51,51)"><a href="https://github.com/raywenderlich/swift-style-guide#struct-initializers" style="background-color:transparent;color:rgb(64,120,192);text-decoration:none;display:block;padding-right:6px;padding-left:30px;line-height:1.2"></a></h3>
+<div style="margin-bottom:16px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:25px;text-align:start;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:rgb(255,255,255)">
+<pre style="color:rgb(51,51,51);font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;overflow:auto;margin-top:0px;margin-bottom:0px;font-style:normal;font-variant:normal;font-weight:normal;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">var</span> optionalSubview: UIView?
+<span style="color:rgb(167,29,93)">var</span> volume: <span style="color:rgb(0,134,179)">Double</span>?
+
+<span style="color:rgb(167,29,93)">if</span> <span style="color:rgb(167,29,93)">let</span> unwrappedSubview <span style="color:rgb(167,29,93)">=</span> optionalSubview {
+  <span style="color:rgb(167,29,93)">if</span> <span style="color:rgb(167,29,93)">let</span> realVolume <span style="color:rgb(167,29,93)">=</span> volume {
+    <span style="color:rgb(150,152,150)">// do something with unwrappedSubview and realVolume</span>
+  }
+}</pre>
+<h3 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:1em;margin-bottom:16px;line-height:1.43;font-weight:bold"><font size="5">Struct Initializers</font></h3>
+<p style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:0px;margin-bottom:16px"><font size="2">Use the native Swift struct initializers rather than the legacy CGGeometry constructors.</font></p>
+<p style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;margin-top:0px;margin-bottom:16px"><strong>Preferred:</strong></p>
+<div style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;margin-bottom:16px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">let</span> bounds <span style="color:rgb(167,29,93)">=</span> CGRect(x: <span style="color:rgb(0,134,179)">40</span>, y: <span style="color:rgb(0,134,179)">20</span>, width: <span style="color:rgb(0,134,179)">120</span>, height: <span style="color:rgb(0,134,179)">80</span>)
+<span style="color:rgb(167,29,93)">let</span> centerPoint <span style="color:rgb(167,29,93)">=</span> CGPoint(x: <span style="color:rgb(0,134,179)">96</span>, y: <span style="color:rgb(0,134,179)">42</span>)</pre>
+</div>
+<p style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;margin-top:0px;margin-bottom:16px"><strong>Not Preferred:</strong></p>
+<div style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;margin-bottom:16px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">let</span> bounds <span style="color:rgb(167,29,93)">=</span> CGRectMake(<span style="color:rgb(0,134,179)">40</span>, <span style="color:rgb(0,134,179)">20</span>, <span style="color:rgb(0,134,179)">120</span>, <span style="color:rgb(0,134,179)">80</span>)
+<span style="color:rgb(167,29,93)">let</span> centerPoint <span style="color:rgb(167,29,93)">=</span> CGPointMake(<span style="color:rgb(0,134,179)">96</span>, <span style="color:rgb(0,134,179)">42</span>)</pre>
+</div>
+<p style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:0px;margin-bottom:16px"><font size="2">Prefer the struct-scope constants&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">CGRect.infiniteRect</code>,&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">CGRect.nullRect</code>, etc. over global constants&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">CGRectInfinite</code>,&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">CGRectNull</code>, etc. For existing variables, you can use the shorter&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">.zeroRect</code>.</font></p>
+<h3 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:1.5em;margin-top:1em;margin-bottom:16px;line-height:1.43;font-weight:bold"><a href="https://github.com/raywenderlich/swift-style-guide#type-inference" style="background-color:transparent;color:rgb(64,120,192);text-decoration:none;display:block;padding-right:6px;padding-left:30px;line-height:1.2"></a>Type Inference</h3>
+<p style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:0px;margin-bottom:16px"><font size="2">Prefer compact code and let the compiler infer the type for a constant or variable, unless you need a specific type other than the default such as&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">CGFloat</code>&nbsp;or&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">Int16</code>.</font></p>
+<p style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;margin-top:0px;margin-bottom:16px"><strong>Preferred:</strong></p>
+<div style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;margin-bottom:16px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">let</span> message <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(24,54,145)"><span>"</span>Click the button<span>"</span></span>
+<span style="color:rgb(167,29,93)">let</span> currentBounds <span style="color:rgb(167,29,93)">=</span> computeViewBounds()
+<span style="color:rgb(167,29,93)">var</span> names <span style="color:rgb(167,29,93)">=</span> [<span style="color:rgb(0,134,179)">String</span>]()
+<span style="color:rgb(167,29,93)">let</span> maximumWidth: CGFloat <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(0,134,179)">106</span><span style="color:rgb(167,29,93)">.</span><span style="color:rgb(0,134,179)">5</span></pre>
+</div>
+<p style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;margin-top:0px;margin-bottom:16px"><strong>Not Preferred:</strong></p>
+<div style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;margin-bottom:16px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">let</span> message: <span style="color:rgb(0,134,179)">String</span> <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(24,54,145)"><span>"</span>Click the button<span>"</span></span>
+<span style="color:rgb(167,29,93)">let</span> currentBounds: CGRect <span style="color:rgb(167,29,93)">=</span> computeViewBounds()
+<span style="color:rgb(167,29,93)">var</span> names: [<span style="color:rgb(0,134,179)">String</span>] <span style="color:rgb(167,29,93)">=</span> []</pre>
+</div>
+<p style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:0px;margin-bottom:16px"><font size="2"><strong>NOTE</strong>: Following this guideline means picking descriptive names is even more important than before.</font></p>
+<h3 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:1em;margin-bottom:16px;line-height:1.43;font-weight:bold"><a href="https://github.com/raywenderlich/swift-style-guide#syntactic-sugar" style="font-size:1.5em;background-color:transparent;color:rgb(64,120,192);text-decoration:none;display:block;padding-right:6px;padding-left:30px;line-height:1.2"></a><font size="5">Syntactic Sugar</font></h3>
+<p style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:0px;margin-bottom:16px"><font size="2">Prefer the shortcut versions of type declarations over the full generics syntax.</font></p>
+<p style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;margin-top:0px;margin-bottom:16px"><strong>Preferred:</strong></p>
+<div style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;margin-bottom:16px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">var</span> deviceModels: [<span style="color:rgb(0,134,179)">String</span>]
+<span style="color:rgb(167,29,93)">var</span> employees: [<span style="color:rgb(0,134,179)">Int</span>: <span style="color:rgb(0,134,179)">String</span>]
+<span style="color:rgb(167,29,93)">var</span> faxNumber: <span style="color:rgb(0,134,179)">Int</span>?</pre>
+</div>
+<p style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;margin-top:0px;margin-bottom:16px"><strong>Not Preferred:</strong></p>
+<div style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-size:16px;margin-bottom:16px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">var</span> deviceModels: <span style="color:rgb(0,134,179)">Array</span><span style="color:rgb(167,29,93)">&lt;</span><span style="color:rgb(0,134,179)">String</span><span style="color:rgb(167,29,93)">&gt;</span>
+<span style="color:rgb(167,29,93)">var</span> employees: <span style="color:rgb(0,134,179)">Dictionary</span><span style="color:rgb(167,29,93)">&lt;</span><span style="color:rgb(0,134,179)">Int</span>, <span style="color:rgb(0,134,179)">String</span><span style="color:rgb(167,29,93)">&gt;</span>
+<span style="color:rgb(167,29,93)">var</span> faxNumber: <span style="color:rgb(0,134,179)">Optional</span><span style="color:rgb(167,29,93)">&lt;</span><span style="color:rgb(0,134,179)">Int</span><span style="color:rgb(167,29,93)">&gt;</span></pre>
+</div>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:1em;margin-bottom:16px;line-height:1.225;font-size:1.75em;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">Semicolons</h2>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:1em;margin-bottom:16px;line-height:1.225;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">
+<p style="margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><font size="2">Swift does not require a semicolon after each statement in your code. They are only required if you wish to combine multiple statements on a single line.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><font size="2">Do not write multiple statements on a single line separated with semicolons.</font></p>
+<p style="margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><font size="2">The only exception to this rule is the&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">for-conditional-increment</code>&nbsp;construct, which requires semicolons. However, alternative&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">for-in</code>&nbsp;constructs should be used where possible.</font></p>
+<p style="font-size:16px;margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><strong>Preferred:</strong></p>
+<div style="font-size:16px;margin-bottom:16px;font-weight:normal;line-height:25px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">let</span> swift <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(24,54,145)"><span>"</span>not a scripting language<span>"</span></span></pre>
+</div>
+<p style="font-size:16px;margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><strong>Not Preferred:</strong></p>
+<div style="font-size:16px;margin-bottom:16px;font-weight:normal;line-height:25px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">let</span> swift <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(24,54,145)"><span>"</span>not a scripting language<span>"</span></span>;</pre>
+</div>
+<p style="margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><font size="2"><strong>NOTE</strong>: Swift is very different to JavaScript, where omitting semicolons is&nbsp;<a href="http://stackoverflow.com/questions/444080/do-you-recommend-using-semicolons-after-every-statement-in-javascript" style="background-color:transparent;color:rgb(64,120,192);text-decoration:none">generally considered unsafe</a></font></p>
+</h2>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:1em;margin-bottom:16px;line-height:1.225;font-size:1.75em;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">Language</h2>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:1em;margin-bottom:16px;line-height:1.225;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">
+<p style="margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><font size="2">Use US English spelling to match Apple's API.</font></p>
+<p style="font-size:16px;margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><strong>Preferred:</strong></p>
+<div style="font-size:16px;margin-bottom:16px;font-weight:normal;line-height:25px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">let</span> color <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(24,54,145)"><span>"</span>red<span>"</span></span></pre>
+</div>
+<p style="font-size:16px;margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><strong>Not Preferred:</strong></p>
+<div style="font-size:16px;margin-bottom:16px;font-weight:normal;line-height:25px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">let</span> colour <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(24,54,145)"><span>"</span>red<span>"</span></span></pre>
+</div>
+</h2>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:1em;margin-bottom:16px;line-height:1.225;font-size:1.75em;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)"><a href="https://github.com/raywenderlich/swift-style-guide#copyright-statement" style="background-color:transparent;color:rgb(64,120,192);text-decoration:none;display:block;padding-right:6px;padding-left:30px;line-height:1"></a></h2>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:1em;margin-bottom:16px;line-height:1.225;font-size:1.75em;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">Control Flow</h2>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:1em;margin-bottom:16px;line-height:1.225;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">
+<p style="margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><font size="2">Prefer the&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">for-in</code>&nbsp;style of&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">for</code>&nbsp;loop over the&nbsp;<code style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;padding:0.2em 0px;margin:0px;background-color:rgba(0,0,0,0.0392157);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px">for-condition-increment</code>&nbsp;style.</font></p>
+<p style="font-size:16px;margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><strong>Preferred:</strong></p>
+<div style="font-size:16px;margin-bottom:16px;font-weight:normal;line-height:25px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">for</span> _ <span style="color:rgb(167,29,93)">in</span> <span style="color:rgb(0,134,179)">0</span><span style="color:rgb(167,29,93)">..&lt;</span><span style="color:rgb(0,134,179)">3</span> {
+  println(<span style="color:rgb(24,54,145)"><span>"</span>Hello three times<span>"</span></span>)
+}
+
+<span style="color:rgb(167,29,93)">for</span> (index, person) <span style="color:rgb(167,29,93)">in</span> enumerate(attendeeList) {
+  println(<span style="color:rgb(24,54,145)"><span>"</span><span>\(</span><span style="color:rgb(51,51,51)">person</span><span>)</span> is at position #<span>\(</span><span style="color:rgb(51,51,51)">index</span><span>)</span><span>"</span></span>)
+}</pre>
+</div>
+<p style="font-size:16px;margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><strong>Not Preferred:</strong></p>
+<div style="font-size:16px;margin-bottom:16px;font-weight:normal;line-height:25px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><span style="color:rgb(167,29,93)">for</span> <span style="color:rgb(167,29,93)">var</span> i <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(0,134,179)">0</span>; i <span style="color:rgb(167,29,93)">&lt;</span> <span style="color:rgb(0,134,179)">3</span>; i<span style="color:rgb(167,29,93)">++</span> {
+  println(<span style="color:rgb(24,54,145)"><span>"</span>Hello three times<span>"</span></span>)
+}
+
+<span style="color:rgb(167,29,93)">for</span> <span style="color:rgb(167,29,93)">var</span> i <span style="color:rgb(167,29,93)">=</span> <span style="color:rgb(0,134,179)">0</span>; i <span style="color:rgb(167,29,93)">&lt;</span> attendeeList<span style="color:rgb(167,29,93)">.</span><span style="color:rgb(0,134,179)">count</span>; i<span style="color:rgb(167,29,93)">++</span> {
+  <span style="color:rgb(167,29,93)">let</span> person <span style="color:rgb(167,29,93)">=</span> attendeeList[i]
+  println(<span style="color:rgb(24,54,145)"><span>"</span><span>\(</span><span style="color:rgb(51,51,51)">person</span><span>)</span> is at position #<span>\(</span><span style="color:rgb(51,51,51)">i</span><span>)</span><span>"</span></span>)
+}</pre>
+</div>
+</h2>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-weight:bold;font-size:1.75em;margin-top:1em;margin-bottom:16px;line-height:1.225;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">How to read .PLIST value from Bundle</h2>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;margin-top:1em;margin-bottom:16px;line-height:1.225;font-weight:bold;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">
+<div style="font-size:16px;margin-bottom:16px;font-weight:normal;line-height:25px"></div>
+<a href="https://github.com/raywenderlich/swift-style-guide#control-flow" style="font-size:1.75em;background-color:transparent;color:rgb(64,120,192);text-decoration:none;display:block;padding-right:6px;padding-left:30px;line-height:1"></a></h2>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-weight:bold;margin-top:1em;margin-bottom:16px;line-height:1.225;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">
+<div style="font-size:16px;margin-bottom:16px;font-weight:normal;line-height:25px">
+<pre style="overflow:auto;font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo;color:rgb(61,29,129)"><span style="color:#4f8187">baseUrl</span><span style="color:#000000"> = </span><span style="color:#703daa">NSBundle</span><span style="color:#000000">.</span>mainBundle<span style="color:#000000">().</span>objectForInfoDictionaryKey<span style="color:#000000">(</span><span style="color:#d12f1b">"API_BASE_URL"</span><span style="color:#000000">) </span><span style="color:#bb2ca2">as</span><span style="color:#000000">! </span><span style="color:#703daa">String</span></p></pre>
+</div>
+<p style="font-size:16px;margin-top:0px;margin-bottom:16px;font-weight:normal;line-height:25px"><br>
+</p>
+</h2>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-weight:bold;font-size:1.75em;margin-top:1em;margin-bottom:16px;line-height:1.225;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">Println only in DEBUG mode</h2>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-weight:bold;margin-top:1em;margin-bottom:16px;line-height:1.225;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">
+<div style="font-size:16px;margin-bottom:16px;font-weight:normal;line-height:25px"></div>
+<a href="https://github.com/raywenderlich/swift-style-guide#control-flow" style="color:rgb(64,120,192);text-decoration:none;font-size:1.75em;background-color:transparent;display:block;padding-right:6px;padding-left:30px;line-height:1"></a></h2>
+<h2 style="font-weight:bold;margin-top:1em;margin-bottom:16px;line-height:1.225;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">
+<div style="margin-bottom:16px;font-weight:normal;line-height:25px">
+<pre style="overflow:auto;margin-top:0px;margin-bottom:0px;line-height:1.45;padding:16px;background-color:rgb(247,247,247);border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;word-wrap:normal;word-break:normal"><p style="margin:0px;font-size:11px;line-height:normal;font-family:Menlo"><span style="color:rgb(187,44,162)">class </span><font color="#000000">CommonUtils{</font></p><p style="color:rgb(51,51,51);margin:0px;font-size:11px;line-height:normal;font-family:Menlo"><span style="color:#bb2ca2">class</span> <span style="color:#bb2ca2">func</span> println(object:<span style="color:#703daa">Any</span>){</p><p style="color:rgb(51,51,51);margin:0px;font-size:11px;line-height:normal;font-family:Menlo">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#78492a">#if</span> <span style="color:#78492a">DEBUG</span></p><p style="color:rgb(51,51,51);margin:0px;font-size:11px;line-height:normal;font-family:Menlo">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Swift.<span style="color:#3d1d81">println</span>(object)</p><p style="color:rgb(51,51,51);margin:0px;font-size:11px;line-height:normal;font-family:Menlo">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#78492a">#endif</span></p><p style="color:rgb(61,29,129);margin:0px;line-height:normal"><span style="font-family:Menlo;font-size:11px;color:rgb(51,51,51);white-space:normal">&nbsp; &nbsp;&nbsp;</span><span style="font-family:Menlo;font-size:11px;color:rgb(51,51,51);white-space:normal">}</span></p><div style="color:rgb(51,51,51)"><span style="font-family:Menlo;font-size:11px;line-height:normal;white-space:normal">}</span></div><div style="color:rgb(51,51,51)"><span style="font-family:Menlo;font-size:11px;line-height:normal;white-space:normal"><br></span></div><div style="color:rgb(51,51,51)"><span style="color:rgb(112,61,170)"><font face="courier new, monospace" size="2">CommonUtil.println("text to print")</font></span></div><div style="color:rgb(51,51,51);font-family:Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:14px"><span style="color:rgb(112,61,170)"><br></span></div><div style="font-family:Consolas,Liberation Mono,Menlo,Courier,monospace"><font color="#000000" size="2">You need to set the Debug value under Swift Compiler -&gt; Other Swift Flags to -D DEBUG</font></div></pre>
+</div>
+</h2>
+<h2 style="color:rgb(51,51,51);font-family:Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif;font-weight:bold;margin-top:1em;margin-bottom:16px;line-height:1.225;padding-bottom:0.3em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(238,238,238)">
+<p style="margin:0px;font-weight:normal;font-size:11px;line-height:normal;font-family:Menlo;color:rgb(0,132,0)"><br>
+</p>
+</h2>
+</div>
+</div>
+
+
+</head>
+</html>
